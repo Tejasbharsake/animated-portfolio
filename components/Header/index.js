@@ -1,8 +1,55 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import ai from '../SVGs/AI'
 import Hamburger from '../SVGs/Hamburger'
 import CurvedText from '../CurvedText';
 import Image from 'next/image';
+
+const LiveClock = () => {
+    const [timeString, setTimeString] = useState('');
+    const [dateString, setDateString] = useState('');
+    const [mounted, setMounted] = useState(false);
+
+    useEffect(() => {
+        setMounted(true);
+        const updateClock = () => {
+            const now = new Date();
+            // Convert to Indian Standard Time (IST)
+            const optionsTime = {
+                timeZone: 'Asia/Kolkata',
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit',
+                hour12: true
+            };
+            const optionsDate = {
+                timeZone: 'Asia/Kolkata',
+                day: '2-digit',
+                month: 'short',
+                year: 'numeric',
+                weekday: 'short'
+            };
+            setTimeString(now.toLocaleTimeString('en-IN', optionsTime));
+            setDateString(now.toLocaleDateString('en-IN', optionsDate));
+        };
+
+        updateClock();
+        const interval = setInterval(updateClock, 1000);
+        return () => clearInterval(interval);
+    }, []);
+
+    if (!mounted) return null;
+
+    return (
+        <div className='ai-live-clock d-none d-md-flex align-items-center ms-3 ms-lg-4'>
+            <div className='ai-clock-content d-flex flex-column'>
+                <span className='ai-clock-time'>
+                    {timeString} <span className='ai-clock-tz'>IST</span>
+                </span>
+                <span className='ai-clock-date'>{dateString}</span>
+            </div>
+        </div>
+    );
+};
 
 const getMenuItemOpacity = ({ menus, i }) => {
     const length = (menus || []).length;
@@ -62,7 +109,7 @@ const Header = ({ data: { menus, handleItemSelect, handleIconClick, rightBtn, lo
     return (
         <header className='ai-header'>
             <div className='ai-header-container'>
-                <div>
+                <div className='d-flex align-items-center'>
                     {!logo?.src ? (
                         <ai onClick={handleIconClick} width={45} height={45} />
                     ) : (
@@ -70,6 +117,7 @@ const Header = ({ data: { menus, handleItemSelect, handleIconClick, rightBtn, lo
                             <Image width={60} height={60} src={logo.src} alt={logo.alt} />
                         </div>
                     )}
+                    <LiveClock />
                 </div>
                 <div className='d-flex'>
                     {rightBtn && (
