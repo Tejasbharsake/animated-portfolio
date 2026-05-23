@@ -1,4 +1,4 @@
-import { openLink, scrollTo } from "./methods";
+import { downloadFile, scrollTo } from "./methods";
 
 
 const header = {
@@ -14,10 +14,10 @@ const header = {
     ],
     rightBtn: {
         label: 'Curriculum Vitae | CV',
-        onClick: () => openLink('assets/cv.pdf')
+        onClick: () => downloadFile('/assets/cv.pdf')
     },
     logo: {
-        src: '/assets/profile.jpg',
+        src: '/assets/tejas_speaking.jpg',
         alt: 'tejasbharsake'
     },
     handleIconClick: () => scrollTo('home'),
