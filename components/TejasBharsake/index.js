@@ -1,16 +1,16 @@
 import { useEffect, useRef, useState } from "react";
-import A from "./afzalImdadSVGs/A";
-import B from "./afzalImdadSVGs/B";
-import E1 from "./afzalImdadSVGs/E1";
-import E2 from "./afzalImdadSVGs/E2";
-import H from "./afzalImdadSVGs/H";
-import K1 from "./afzalImdadSVGs/K1";
-import K2 from "./afzalImdadSVGs/K2";
-import K3 from "./afzalImdadSVGs/K3";
-import M from "./afzalImdadSVGs/M";
-import N from "./afzalImdadSVGs/N";
-import N2 from "./afzalImdadSVGs/N2";
-import U from "./afzalImdadSVGs/U";
+import A from "./tejasBharsakeSVGs/A";
+import B from "./tejasBharsakeSVGs/B";
+import E1 from "./tejasBharsakeSVGs/E1";
+import E2 from "./tejasBharsakeSVGs/E2";
+import H from "./tejasBharsakeSVGs/H";
+import K1 from "./tejasBharsakeSVGs/K1";
+import K2 from "./tejasBharsakeSVGs/K2";
+import K3 from "./tejasBharsakeSVGs/K3";
+import M from "./tejasBharsakeSVGs/M";
+import N from "./tejasBharsakeSVGs/N";
+import N2 from "./tejasBharsakeSVGs/N2";
+import U from "./tejasBharsakeSVGs/U";
 
 const SvgWrapper = ({ SVG, className, ...rest }) => (
   <div

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import TejasBharsake from '../AfzalImdad';
+import TejasBharsake from '../TejasBharsake';
 
 const PreLoader = () => {
     const [loader, handleLoader] = useState(true);
