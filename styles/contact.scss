@@ -48,6 +48,68 @@
     .ai-contact-button {
       margin-top: 50px;
     }
+
+    .ai-contact-form {
+      margin-top: 40px;
+      text-align: left;
+      background: rgba(255, 255, 255, 0.03);
+      padding: 30px;
+      border-radius: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+      backdrop-filter: blur(10px);
+      transition: all 0.3s ease;
+
+      .ai-input, .ai-textarea {
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        color: $themeColor3;
+        border-radius: 6px;
+        padding: 14px 18px;
+        font-size: 16px;
+        transition: border-color 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+
+        &:focus {
+          background: rgba(255, 255, 255, 0.1);
+          border-color: $themeColor4;
+          box-shadow: 0 0 0 3px rgba(238, 238, 238, 0.15);
+          outline: none;
+          color: $themeColor3;
+        }
+
+        &::placeholder {
+          color: rgba(255, 255, 255, 0.4);
+        }
+      }
+
+      .ai-textarea {
+        resize: none;
+      }
+    }
+
+    .ai-contact-success {
+      margin-top: 40px;
+      padding: 25px;
+      border-radius: 8px;
+      background: rgba(0, 173, 181, 0.15);
+      border: 1px solid $themeColor3;
+      color: $themeColor3;
+      text-align: center;
+      box-shadow: 0 4px 20px rgba(0, 173, 181, 0.1);
+
+      h3 {
+        color: $themeColor4;
+        margin-bottom: 12px;
+        font-size: 24px;
+        font-weight: 700;
+      }
+
+      p {
+        font-size: 16px;
+        line-height: 1.6;
+        margin: 0;
+      }
+    }
   }
 
   .ai-contact-git-section {
